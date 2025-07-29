@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Analysis - Insurance Data Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-pending { background: #ffeaa7; color: #d63031; }
+        .status-running { background: #74b9ff; color: #0984e3; }
+        .status-completed { background: #55efc4; color: #00b894; }
+        .status-failed { background: #ff7675; color: #d63031; }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            height: calc(100vh - 140px);
+        }
+
+        .content-area {
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            border-left: 1px solid #dee2e6;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .progress-section {
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #dee2e6;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+            border-radius: 6px;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .markdown-content {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            min-height: 400px;
+        }
+
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .markdown-content h1 { font-size: 1.8rem; }
+        .markdown-content h2 { font-size: 1.4rem; }
+        .markdown-content h3 { font-size: 1.2rem; }
+
+        .markdown-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .markdown-content th, .markdown-content td {
+            border: 1px solid #dee2e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .markdown-content th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .markdown-content code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+
+        .markdown-content pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .activity-log {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            height: 250px;
+            overflow-y: auto;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 4px 0;
+        }
+
+        .log-timestamp {
+            color: #95a5a6;
+            margin-right: 10px;
+        }
+
+        .log-info { color: #3498db; }
+        .log-success { color: #2ecc71; }
+        .log-warning { color: #f39c12; }
+        .log-error { color: #e74c3c; }
+
+        .download-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .download-button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .connection-status {
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .connected { background: #d4edda; color: #155724; }
+        .disconnected { background: #f8d7da; color: #721c24; }
+
+        .file-updates {
+            margin-top: 20px;
+        }
+
+        .file-update-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .file-size {
+            color: #6c757d;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #dee2e6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Real-time Analysis Dashboard</h1>
+            <div class="status-badge" id="statusBadge">CONNECTING</div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area">
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Connecting to analysis...</div>
+                </div>
+
+                <div class="markdown-content" id="markdownContent">
+                    <h2>🔄 Waiting for analysis to begin...</h2>
+                    <p>Claude is preparing to analyze your insurance dataset. This page will update in real-time as the analysis progresses.</p>
+                    
+                    <h3>What to expect:</h3>
+                    <ul>
+                        <li>📊 Data structure and quality analysis</li>
+                        <li>📈 Statistical insights and trends</li>
+                        <li>🏢 Business intelligence findings</li>
+                        <li>🌍 Geographic distribution analysis</li>
+                        <li>⚠️ Risk assessment and recommendations</li>
+                        <li>📋 Executive summary with actionable insights</li>
+                    </ul>
+                </div>
+
+                <div class="download-section">
+                    <a href="/download-markdown" class="download-button" id="downloadButton" style="display: none;">
+                        📄 Download Markdown Report
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="connection-status" id="connectionStatus">
+                    🔄 Connecting to real-time updates...
+                </div>
+
+                <h3 style="margin-bottom: 15px; color: #2c3e50;">📋 Activity Log</h3>
+                <div class="activity-log" id="activityLog">
+                    <div class="log-entry">
+                        <span class="log-timestamp">[--:--:--]</span>
+                        <span class="log-info">Initializing real-time monitoring...</span>
+                    </div>
+                </div>
+
+                <div class="file-updates" id="fileUpdates">
+                    <h4 style="margin-bottom: 10px; color: #2c3e50;">📁 File Updates</h4>
+                    <div style="color: #6c757d; font-size: 0.9rem;">No file updates yet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let websocket = null;
+        let analysisId = 'realtime_' + Date.now();
+        let isConnected = false;
+
+        // Get analysis ID from URL or generate one
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('id')) {
+            analysisId = urlParams.get('id');
+        }
+
+        // DOM elements
+        const statusBadge = document.getElementById('statusBadge');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        const markdownContent = document.getElementById('markdownContent');
+        const connectionStatus = document.getElementById('connectionStatus');
+        const activityLog = document.getElementById('activityLog');
+        const fileUpdates = document.getElementById('fileUpdates');
+        const downloadButton = document.getElementById('downloadButton');
+
+        function connectWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsUrl = `${protocol}//${window.location.host}/ws/${analysisId}`;
+            
+            websocket = new WebSocket(wsUrl);
+
+            websocket.onopen = function(event) {
+                isConnected = true;
+                updateConnectionStatus(true);
+                addLogEntry('Connected to real-time updates', 'success');
+                
+                // Start analysis
+                startAnalysis();
+            };
+
+            websocket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                handleWebSocketMessage(data);
+            };
+
+            websocket.onclose = function(event) {
+                isConnected = false;
+                updateConnectionStatus(false);
+                addLogEntry('Connection closed', 'warning');
+                
+                // Attempt reconnection after 3 seconds
+                setTimeout(connectWebSocket, 3000);
+            };
+
+            websocket.onerror = function(error) {
+                addLogEntry('WebSocket error occurred', 'error');
+            };
+        }
+
+        function handleWebSocketMessage(data) {
+            console.log('Received:', data);
+
+            switch(data.type) {
+                case 'status_update':
+                    updateStatus(data.status, data.message);
+                    addLogEntry(`Status: ${data.message}`, 'info');
+                    break;
+
+                case 'file_update':
+                    handleFileUpdate(data);
+                    break;
+
+                case 'analysis_complete':
+                    updateStatus(data.status, data.message);
+                    addLogEntry(`Analysis ${data.success ? 'completed successfully' : 'failed'}`, data.success ? 'success' : 'error');
+                    if (data.success) {
+                        downloadButton.style.display = 'inline-flex';
+                    }
+                    break;
+
+                case 'analysis_error':
+                    addLogEntry(`Error: ${data.error}`, 'error');
+                    break;
+
+                case 'heartbeat':
+                    // Keep connection alive
+                    break;
+            }
+        }
+
+        function handleFileUpdate(data) {
+            addLogEntry(`File updated: ${data.filename} (${data.size} bytes)`, 'info');
+            
+            // Update file updates list
+            const fileUpdate = document.createElement('div');
+            fileUpdate.className = 'file-update-item';
+            fileUpdate.innerHTML = `
+                <div class="file-name">${data.filename}</div>
+                <div class="file-size">${data.size} bytes</div>
+                <div class="file-size">${new Date(data.timestamp).toLocaleTimeString()}</div>
+            `;
+            
+            const fileUpdatesContainer = document.getElementById('fileUpdates');
+            if (fileUpdatesContainer.children.length === 1) {
+                fileUpdatesContainer.innerHTML = '<h4 style="margin-bottom: 10px; color: #2c3e50;">📁 File Updates</h4>';
+            }
+            fileUpdatesContainer.appendChild(fileUpdate);
+
+            // Update main content if it's research.md
+            if (data.filename === 'research.md' && data.content) {
+                updateMarkdownContent(data.content);
+            }
+        }
+
+        function updateStatus(status, message) {
+            statusBadge.textContent = status.toUpperCase();
+            statusBadge.className = `status-badge status-${status}`;
+            
+            progressText.textContent = message || `Status: ${status}`;
+            
+            // Update progress bar
+            let progressPercent = 0;
+            switch(status) {
+                case 'pending': progressPercent = 10; break;
+                case 'running': progressPercent = 50; break;
+                case 'completed': progressPercent = 100; break;
+                case 'failed': progressPercent = 100; break;
+            }
+            progressFill.style.width = `${progressPercent}%`;
+        }
+
+        function updateConnectionStatus(connected) {
+            if (connected) {
+                connectionStatus.textContent = '🟢 Connected - Real-time updates active';
+                connectionStatus.className = 'connection-status connected';
+            } else {
+                connectionStatus.textContent = '🔴 Disconnected - Attempting to reconnect...';
+                connectionStatus.className = 'connection-status disconnected';
+            }
+        }
+
+        function addLogEntry(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            logEntry.innerHTML = `
+                <span class="log-timestamp">[${timestamp}]</span>
+                <span class="log-${type}">${message}</span>
+            `;
+            
+            activityLog.appendChild(logEntry);
+            activityLog.scrollTop = activityLog.scrollHeight;
+        }
+
+        function updateMarkdownContent(content) {
+            // Convert markdown to HTML (basic conversion)
+            let html = content
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`(.*?)`/g, '<code>$1</code>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^(.)/gm, '<p>$1')
+                .replace(/(.)\n$/gm, '$1</p>');
+                
+            markdownContent.innerHTML = html;
+        }
+
+        async function startAnalysis() {
+            try {
+                addLogEntry('Starting analysis...', 'info');
+                updateStatus('pending', 'Starting analysis...');
+                
+                // Start the analysis
+                const response = await fetch('/analyze', {
+                    method: 'POST'
+                });
+                
+                const result = await response.json();
+                if (result.analysis_id) {
+                    addLogEntry(`Analysis started with ID: ${result.analysis_id}`, 'success');
+                } else {
+                    addLogEntry('Failed to start analysis', 'error');
+                }
+                
+            } catch (error) {
+                addLogEntry(`Error starting analysis: ${error.message}`, 'error');
+            }
+        }
+
+        // Initialize
+        connectWebSocket();
+    </script>
+</body>
+</html>

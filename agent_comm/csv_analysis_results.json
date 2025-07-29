@@ -1,0 +1,1431 @@
+{
+  "overview": {
+    "shape": [
+      213328,
+      49
+    ],
+    "columns": [
+      "AGENCY_ID",
+      "PRIMARY_AGENCY_ID",
+      "PROD_ABBR",
+      "PROD_LINE",
+      "STATE_ABBR",
+      "STAT_PROFILE_DATE_YEAR",
+      "RETENTION_POLY_QTY",
+      "POLY_INFORCE_QTY",
+      "PREV_POLY_INFORCE_QTY",
+      "NB_WRTN_PREM_AMT",
+      "WRTN_PREM_AMT",
+      "PREV_WRTN_PREM_AMT",
+      "PRD_ERND_PREM_AMT",
+      "PRD_INCRD_LOSSES_AMT",
+      "MONTHS",
+      "RETENTION_RATIO",
+      "LOSS_RATIO",
+      "LOSS_RATIO_3YR",
+      "GROWTH_RATE_3YR",
+      "AGENCY_APPOINTMENT_YEAR",
+      "ACTIVE_PRODUCERS",
+      "MAX_AGE",
+      "MIN_AGE",
+      "VENDOR_IND",
+      "VENDOR",
+      "PL_START_YEAR",
+      "PL_END_YEAR",
+      "COMMISIONS_START_YEAR",
+      "COMMISIONS_END_YEAR",
+      "CL_START_YEAR",
+      "CL_END_YEAR",
+      "ACTIVITY_NOTES_START_YEAR",
+      "ACTIVITY_NOTES_END_YEAR",
+      "CL_BOUND_CT_MDS",
+      "CL_QUO_CT_MDS",
+      "CL_BOUND_CT_SBZ",
+      "CL_QUO_CT_SBZ",
+      "CL_BOUND_CT_eQT",
+      "CL_QUO_CT_eQT",
+      "PL_BOUND_CT_ELINKS",
+      "PL_QUO_CT_ELINKS",
+      "PL_BOUND_CT_PLRANK",
+      "PL_QUO_CT_PLRANK",
+      "PL_BOUND_CT_eQTte",
+      "PL_QUO_CT_eQTte",
+      "PL_BOUND_CT_APPLIED",
+      "PL_QUO_CT_APPLIED",
+      "PL_BOUND_CT_TRANSACTNOW",
+      "PL_QUO_CT_TRANSACTNOW"
+    ],
+    "dtypes": {
+      "AGENCY_ID": "int64",
+      "PRIMARY_AGENCY_ID": "int64",
+      "PROD_ABBR": "object",
+      "PROD_LINE": "object",
+      "STATE_ABBR": "object",
+      "STAT_PROFILE_DATE_YEAR": "int64",
+      "RETENTION_POLY_QTY": "int64",
+      "POLY_INFORCE_QTY": "int64",
+      "PREV_POLY_INFORCE_QTY": "int64",
+      "NB_WRTN_PREM_AMT": "float64",
+      "WRTN_PREM_AMT": "float64",
+      "PREV_WRTN_PREM_AMT": "float64",
+      "PRD_ERND_PREM_AMT": "float64",
+      "PRD_INCRD_LOSSES_AMT": "float64",
+      "MONTHS": "int64",
+      "RETENTION_RATIO": "float64",
+      "LOSS_RATIO": "float64",
+      "LOSS_RATIO_3YR": "float64",
+      "GROWTH_RATE_3YR": "float64",
+      "AGENCY_APPOINTMENT_YEAR": "int64",
+      "ACTIVE_PRODUCERS": "int64",
+      "MAX_AGE": "int64",
+      "MIN_AGE": "int64",
+      "VENDOR_IND": "object",
+      "VENDOR": "object",
+      "PL_START_YEAR": "int64",
+      "PL_END_YEAR": "int64",
+      "COMMISIONS_START_YEAR": "int64",
+      "COMMISIONS_END_YEAR": "int64",
+      "CL_START_YEAR": "int64",
+      "CL_END_YEAR": "int64",
+      "ACTIVITY_NOTES_START_YEAR": "int64",
+      "ACTIVITY_NOTES_END_YEAR": "int64",
+      "CL_BOUND_CT_MDS": "int64",
+      "CL_QUO_CT_MDS": "int64",
+      "CL_BOUND_CT_SBZ": "int64",
+      "CL_QUO_CT_SBZ": "int64",
+      "CL_BOUND_CT_eQT": "int64",
+      "CL_QUO_CT_eQT": "int64",
+      "PL_BOUND_CT_ELINKS": "int64",
+      "PL_QUO_CT_ELINKS": "int64",
+      "PL_BOUND_CT_PLRANK": "int64",
+      "PL_QUO_CT_PLRANK": "int64",
+      "PL_BOUND_CT_eQTte": "int64",
+      "PL_QUO_CT_eQTte": "int64",
+      "PL_BOUND_CT_APPLIED": "int64",
+      "PL_QUO_CT_APPLIED": "int64",
+      "PL_BOUND_CT_TRANSACTNOW": "int64",
+      "PL_QUO_CT_TRANSACTNOW": "int64"
+    },
+    "memory_usage": "139404654",
+    "missing_values": {
+      "AGENCY_ID": 0,
+      "PRIMARY_AGENCY_ID": 0,
+      "PROD_ABBR": 0,
+      "PROD_LINE": 0,
+      "STATE_ABBR": 0,
+      "STAT_PROFILE_DATE_YEAR": 0,
+      "RETENTION_POLY_QTY": 0,
+      "POLY_INFORCE_QTY": 0,
+      "PREV_POLY_INFORCE_QTY": 0,
+      "NB_WRTN_PREM_AMT": 0,
+      "WRTN_PREM_AMT": 0,
+      "PREV_WRTN_PREM_AMT": 0,
+      "PRD_ERND_PREM_AMT": 0,
+      "PRD_INCRD_LOSSES_AMT": 0,
+      "MONTHS": 0,
+      "RETENTION_RATIO": 0,
+      "LOSS_RATIO": 0,
+      "LOSS_RATIO_3YR": 0,
+      "GROWTH_RATE_3YR": 0,
+      "AGENCY_APPOINTMENT_YEAR": 0,
+      "ACTIVE_PRODUCERS": 0,
+      "MAX_AGE": 0,
+      "MIN_AGE": 0,
+      "VENDOR_IND": 0,
+      "VENDOR": 0,
+      "PL_START_YEAR": 0,
+      "PL_END_YEAR": 0,
+      "COMMISIONS_START_YEAR": 0,
+      "COMMISIONS_END_YEAR": 0,
+      "CL_START_YEAR": 0,
+      "CL_END_YEAR": 0,
+      "ACTIVITY_NOTES_START_YEAR": 0,
+      "ACTIVITY_NOTES_END_YEAR": 0,
+      "CL_BOUND_CT_MDS": 0,
+      "CL_QUO_CT_MDS": 0,
+      "CL_BOUND_CT_SBZ": 0,
+      "CL_QUO_CT_SBZ": 0,
+      "CL_BOUND_CT_eQT": 0,
+      "CL_QUO_CT_eQT": 0,
+      "PL_BOUND_CT_ELINKS": 0,
+      "PL_QUO_CT_ELINKS": 0,
+      "PL_BOUND_CT_PLRANK": 0,
+      "PL_QUO_CT_PLRANK": 0,
+      "PL_BOUND_CT_eQTte": 0,
+      "PL_QUO_CT_eQTte": 0,
+      "PL_BOUND_CT_APPLIED": 0,
+      "PL_QUO_CT_APPLIED": 0,
+      "PL_BOUND_CT_TRANSACTNOW": 0,
+      "PL_QUO_CT_TRANSACTNOW": 0
+    },
+    "duplicate_rows": "0",
+    "sample_data": [
+      {
+        "AGENCY_ID": 3,
+        "PRIMARY_AGENCY_ID": 3,
+        "PROD_ABBR": "BOILERMACH",
+        "PROD_LINE": "CL",
+        "STATE_ABBR": "IN",
+        "STAT_PROFILE_DATE_YEAR": 2005,
+        "RETENTION_POLY_QTY": 0,
+        "POLY_INFORCE_QTY": 0,
+        "PREV_POLY_INFORCE_QTY": 0,
+        "NB_WRTN_PREM_AMT": 40.0,
+        "WRTN_PREM_AMT": 3074.63,
+        "PREV_WRTN_PREM_AMT": 149.0,
+        "PRD_ERND_PREM_AMT": 3005.77,
+        "PRD_INCRD_LOSSES_AMT": 0.0,
+        "MONTHS": 8,
+        "RETENTION_RATIO": 99999.0,
+        "LOSS_RATIO": 0.0,
+        "LOSS_RATIO_3YR": 99999.0,
+        "GROWTH_RATE_3YR": 99999.0,
+        "AGENCY_APPOINTMENT_YEAR": 1957,
+        "ACTIVE_PRODUCERS": 14,
+        "MAX_AGE": 85,
+        "MIN_AGE": 48,
+        "VENDOR_IND": "N",
+        "VENDOR": "Unknown",
+        "PL_START_YEAR": 99999,
+        "PL_END_YEAR": 99999,
+        "COMMISIONS_START_YEAR": 99999,
+        "COMMISIONS_END_YEAR": 99999,
+        "CL_START_YEAR": 99999,
+        "CL_END_YEAR": 99999,
+        "ACTIVITY_NOTES_START_YEAR": 99999,
+        "ACTIVITY_NOTES_END_YEAR": 99999,
+        "CL_BOUND_CT_MDS": 0,
+        "CL_QUO_CT_MDS": 1,
+        "CL_BOUND_CT_SBZ": 0,
+        "CL_QUO_CT_SBZ": 0,
+        "CL_BOUND_CT_eQT": 0,
+        "CL_QUO_CT_eQT": 0,
+        "PL_BOUND_CT_ELINKS": 0,
+        "PL_QUO_CT_ELINKS": 0,
+        "PL_BOUND_CT_PLRANK": 0,
+        "PL_QUO_CT_PLRANK": 103,
+        "PL_BOUND_CT_eQTte": 50,
+        "PL_QUO_CT_eQTte": 288,
+        "PL_BOUND_CT_APPLIED": 0,
+        "PL_QUO_CT_APPLIED": 0,
+        "PL_BOUND_CT_TRANSACTNOW": 0,
+        "PL_QUO_CT_TRANSACTNOW": 0
+      },
+      {
+        "AGENCY_ID": 3,
+        "PRIMARY_AGENCY_ID": 3,
+        "PROD_ABBR": "BOILERMACH",
+        "PROD_LINE": "CL",
+        "STATE_ABBR": "IN",
+        "STAT_PROFILE_DATE_YEAR": 2006,
+        "RETENTION_POLY_QTY": 0,
+        "POLY_INFORCE_QTY": 0,
+        "PREV_POLY_INFORCE_QTY": 0,
+        "NB_WRTN_PREM_AMT": 151.0,
+        "WRTN_PREM_AMT": 6562.28,
+        "PREV_WRTN_PREM_AMT": 5438.55,
+        "PRD_ERND_PREM_AMT": 6433.44,
+        "PRD_INCRD_LOSSES_AMT": 0.0,
+        "MONTHS": 12,
+        "RETENTION_RATIO": 99999.0,
+        "LOSS_RATIO": 0.0,
+        "LOSS_RATIO_3YR": 0.69538969,
+        "GROWTH_RATE_3YR": 99999.0,
+        "AGENCY_APPOINTMENT_YEAR": 1957,
+        "ACTIVE_PRODUCERS": 14,
+        "MAX_AGE": 85,
+        "MIN_AGE": 48,
+        "VENDOR_IND": "N",
+        "VENDOR": "Unknown",
+        "PL_START_YEAR": 99999,
+        "PL_END_YEAR": 99999,
+        "COMMISIONS_START_YEAR": 99999,
+        "COMMISIONS_END_YEAR": 99999,
+        "CL_START_YEAR": 99999,
+        "CL_END_YEAR": 99999,
+        "ACTIVITY_NOTES_START_YEAR": 99999,
+        "ACTIVITY_NOTES_END_YEAR": 99999,
+        "CL_BOUND_CT_MDS": 0,
+        "CL_QUO_CT_MDS": 1,
+        "CL_BOUND_CT_SBZ": 0,
+        "CL_QUO_CT_SBZ": 0,
+        "CL_BOUND_CT_eQT": 0,
+        "CL_QUO_CT_eQT": 0,
+        "PL_BOUND_CT_ELINKS": 0,
+        "PL_QUO_CT_ELINKS": 0,
+        "PL_BOUND_CT_PLRANK": 0,
+        "PL_QUO_CT_PLRANK": 103,
+        "PL_BOUND_CT_eQTte": 50,
+        "PL_QUO_CT_eQTte": 288,
+        "PL_BOUND_CT_APPLIED": 0,
+        "PL_QUO_CT_APPLIED": 0,
+        "PL_BOUND_CT_TRANSACTNOW": 0,
+        "PL_QUO_CT_TRANSACTNOW": 0
+      },
+      {
+        "AGENCY_ID": 3,
+        "PRIMARY_AGENCY_ID": 3,
+        "PROD_ABBR": "BOILERMACH",
+        "PROD_LINE": "CL",
+        "STATE_ABBR": "IN",
+        "STAT_PROFILE_DATE_YEAR": 2007,
+        "RETENTION_POLY_QTY": 0,
+        "POLY_INFORCE_QTY": 0,
+        "PREV_POLY_INFORCE_QTY": 0,
+        "NB_WRTN_PREM_AMT": 40.0,
+        "WRTN_PREM_AMT": 6205.11,
+        "PREV_WRTN_PREM_AMT": 6562.28,
+        "PRD_ERND_PREM_AMT": 6357.09,
+        "PRD_INCRD_LOSSES_AMT": 0.0,
+        "MONTHS": 12,
+        "RETENTION_RATIO": 99999.0,
+        "LOSS_RATIO": 0.0,
+        "LOSS_RATIO_3YR": 0.472728542,
+        "GROWTH_RATE_3YR": 99999.0,
+        "AGENCY_APPOINTMENT_YEAR": 1957,
+        "ACTIVE_PRODUCERS": 14,
+        "MAX_AGE": 85,
+        "MIN_AGE": 48,
+        "VENDOR_IND": "N",
+        "VENDOR": "Unknown",
+        "PL_START_YEAR": 99999,
+        "PL_END_YEAR": 99999,
+        "COMMISIONS_START_YEAR": 99999,
+        "COMMISIONS_END_YEAR": 99999,
+        "CL_START_YEAR": 99999,
+        "CL_END_YEAR": 99999,
+        "ACTIVITY_NOTES_START_YEAR": 99999,
+        "ACTIVITY_NOTES_END_YEAR": 99999,
+        "CL_BOUND_CT_MDS": 0,
+        "CL_QUO_CT_MDS": 1,
+        "CL_BOUND_CT_SBZ": 0,
+        "CL_QUO_CT_SBZ": 0,
+        "CL_BOUND_CT_eQT": 0,
+        "CL_QUO_CT_eQT": 0,
+        "PL_BOUND_CT_ELINKS": 0,
+        "PL_QUO_CT_ELINKS": 0,
+        "PL_BOUND_CT_PLRANK": 0,
+        "PL_QUO_CT_PLRANK": 103,
+        "PL_BOUND_CT_eQTte": 50,
+        "PL_QUO_CT_eQTte": 288,
+        "PL_BOUND_CT_APPLIED": 0,
+        "PL_QUO_CT_APPLIED": 0,
+        "PL_BOUND_CT_TRANSACTNOW": 0,
+        "PL_QUO_CT_TRANSACTNOW": 0
+      },
+      {
+        "AGENCY_ID": 3,
+        "PRIMARY_AGENCY_ID": 3,
+        "PROD_ABBR": "BOILERMACH",
+        "PROD_LINE": "CL",
+        "STATE_ABBR": "IN",
+        "STAT_PROFILE_DATE_YEAR": 2008,
+        "RETENTION_POLY_QTY": 0,
+        "POLY_INFORCE_QTY": 0,
+        "PREV_POLY_INFORCE_QTY": 0,
+        "NB_WRTN_PREM_AMT": 69.0,
+        "WRTN_PREM_AMT": 5159.89,
+        "PREV_WRTN_PREM_AMT": 6205.11,
+        "PRD_ERND_PREM_AMT": 5315.01,
+        "PRD_INCRD_LOSSES_AMT": 0.0,
+        "MONTHS": 12,
+        "RETENTION_RATIO": 99999.0,
+        "LOSS_RATIO": 0.0,
+        "LOSS_RATIO_3YR": 0.445760254,
+        "GROWTH_RATE_3YR": -0.082901913,
+        "AGENCY_APPOINTMENT_YEAR": 1957,
+        "ACTIVE_PRODUCERS": 14,
+        "MAX_AGE": 85,
+        "MIN_AGE": 48,
+        "VENDOR_IND": "N",
+        "VENDOR": "Unknown",
+        "PL_START_YEAR": 99999,
+        "PL_END_YEAR": 99999,
+        "COMMISIONS_START_YEAR": 99999,
+        "COMMISIONS_END_YEAR": 99999,
+        "CL_START_YEAR": 99999,
+        "CL_END_YEAR": 99999,
+        "ACTIVITY_NOTES_START_YEAR": 99999,
+        "ACTIVITY_NOTES_END_YEAR": 99999,
+        "CL_BOUND_CT_MDS": 0,
+        "CL_QUO_CT_MDS": 1,
+        "CL_BOUND_CT_SBZ": 0,
+        "CL_QUO_CT_SBZ": 0,
+        "CL_BOUND_CT_eQT": 0,
+        "CL_QUO_CT_eQT": 0,
+        "PL_BOUND_CT_ELINKS": 0,
+        "PL_QUO_CT_ELINKS": 0,
+        "PL_BOUND_CT_PLRANK": 0,
+        "PL_QUO_CT_PLRANK": 103,
+        "PL_BOUND_CT_eQTte": 50,
+        "PL_QUO_CT_eQTte": 288,
+        "PL_BOUND_CT_APPLIED": 0,
+        "PL_QUO_CT_APPLIED": 0,
+        "PL_BOUND_CT_TRANSACTNOW": 0,
+        "PL_QUO_CT_TRANSACTNOW": 0
+      },
+      {
+        "AGENCY_ID": 3,
+        "PRIMARY_AGENCY_ID": 3,
+        "PROD_ABBR": "BOILERMACH",
+        "PROD_LINE": "CL",
+        "STATE_ABBR": "IN",
+        "STAT_PROFILE_DATE_YEAR": 2009,
+        "RETENTION_POLY_QTY": 0,
+        "POLY_INFORCE_QTY": 0,
+        "PREV_POLY_INFORCE_QTY": 0,
+        "NB_WRTN_PREM_AMT": 28.0,
+        "WRTN_PREM_AMT": 4527.71,
+        "PREV_WRTN_PREM_AMT": 5159.89,
+        "PRD_ERND_PREM_AMT": 4706.47,
+        "PRD_INCRD_LOSSES_AMT": 0.0,
+        "MONTHS": 12,
+        "RETENTION_RATIO": 99999.0,
+        "LOSS_RATIO": 0.0,
+        "LOSS_RATIO_3YR": 0.337674382,
+        "GROWTH_RATE_3YR": -0.148077899,
+        "AGENCY_APPOINTMENT_YEAR": 1957,
+        "ACTIVE_PRODUCERS": 14,
+        "MAX_AGE": 85,
+        "MIN_AGE": 48,
+        "VENDOR_IND": "N",
+        "VENDOR": "Unknown",
+        "PL_START_YEAR": 99999,
+        "PL_END_YEAR": 99999,
+        "COMMISIONS_START_YEAR": 99999,
+        "COMMISIONS_END_YEAR": 99999,
+        "CL_START_YEAR": 99999,
+        "CL_END_YEAR": 99999,
+        "ACTIVITY_NOTES_START_YEAR": 99999,
+        "ACTIVITY_NOTES_END_YEAR": 99999,
+        "CL_BOUND_CT_MDS": 0,
+        "CL_QUO_CT_MDS": 1,
+        "CL_BOUND_CT_SBZ": 0,
+        "CL_QUO_CT_SBZ": 0,
+        "CL_BOUND_CT_eQT": 0,
+        "CL_QUO_CT_eQT": 0,
+        "PL_BOUND_CT_ELINKS": 0,
+        "PL_QUO_CT_ELINKS": 0,
+        "PL_BOUND_CT_PLRANK": 0,
+        "PL_QUO_CT_PLRANK": 103,
+        "PL_BOUND_CT_eQTte": 50,
+        "PL_QUO_CT_eQTte": 288,
+        "PL_BOUND_CT_APPLIED": 0,
+        "PL_QUO_CT_APPLIED": 0,
+        "PL_BOUND_CT_TRANSACTNOW": 0,
+        "PL_QUO_CT_TRANSACTNOW": 0
+      }
+    ]
+  },
+  "quality": {
+    "total_rows": 213328,
+    "total_columns": 49,
+    "missing_data": {},
+    "data_types": {
+      "AGENCY_ID": "int64",
+      "PRIMARY_AGENCY_ID": "int64",
+      "PROD_ABBR": "object",
+      "PROD_LINE": "object",
+      "STATE_ABBR": "object",
+      "STAT_PROFILE_DATE_YEAR": "int64",
+      "RETENTION_POLY_QTY": "int64",
+      "POLY_INFORCE_QTY": "int64",
+      "PREV_POLY_INFORCE_QTY": "int64",
+      "NB_WRTN_PREM_AMT": "float64",
+      "WRTN_PREM_AMT": "float64",
+      "PREV_WRTN_PREM_AMT": "float64",
+      "PRD_ERND_PREM_AMT": "float64",
+      "PRD_INCRD_LOSSES_AMT": "float64",
+      "MONTHS": "int64",
+      "RETENTION_RATIO": "float64",
+      "LOSS_RATIO": "float64",
+      "LOSS_RATIO_3YR": "float64",
+      "GROWTH_RATE_3YR": "float64",
+      "AGENCY_APPOINTMENT_YEAR": "int64",
+      "ACTIVE_PRODUCERS": "int64",
+      "MAX_AGE": "int64",
+      "MIN_AGE": "int64",
+      "VENDOR_IND": "object",
+      "VENDOR": "object",
+      "PL_START_YEAR": "int64",
+      "PL_END_YEAR": "int64",
+      "COMMISIONS_START_YEAR": "int64",
+      "COMMISIONS_END_YEAR": "int64",
+      "CL_START_YEAR": "int64",
+      "CL_END_YEAR": "int64",
+      "ACTIVITY_NOTES_START_YEAR": "int64",
+      "ACTIVITY_NOTES_END_YEAR": "int64",
+      "CL_BOUND_CT_MDS": "int64",
+      "CL_QUO_CT_MDS": "int64",
+      "CL_BOUND_CT_SBZ": "int64",
+      "CL_QUO_CT_SBZ": "int64",
+      "CL_BOUND_CT_eQT": "int64",
+      "CL_QUO_CT_eQT": "int64",
+      "PL_BOUND_CT_ELINKS": "int64",
+      "PL_QUO_CT_ELINKS": "int64",
+      "PL_BOUND_CT_PLRANK": "int64",
+      "PL_QUO_CT_PLRANK": "int64",
+      "PL_BOUND_CT_eQTte": "int64",
+      "PL_QUO_CT_eQTte": "int64",
+      "PL_BOUND_CT_APPLIED": "int64",
+      "PL_QUO_CT_APPLIED": "int64",
+      "PL_BOUND_CT_TRANSACTNOW": "int64",
+      "PL_QUO_CT_TRANSACTNOW": "int64"
+    },
+    "unique_values": {
+      "PROD_ABBR": {
+        "count": 28,
+        "values": {
+          "GENERALIAB": 15254,
+          "HOMEOWNERS": 14589,
+          "COMMAUTO": 14466,
+          "FIREALLIED": 14142,
+          "ANNIV": 13823,
+          "BOILERMACH": 13571,
+          "COMMPOL": 13229,
+          "COMMINLMAR": 12205,
+          "DWELLFIRE": 9735,
+          "BOP": 9659
+        }
+      },
+      "PROD_LINE": {
+        "count": 2,
+        "values": {
+          "CL": 124692,
+          "PL": 88636
+        }
+      },
+      "STATE_ABBR": {
+        "count": 6,
+        "values": {
+          "OH": 101323,
+          "IN": 34923,
+          "PA": 32207,
+          "KY": 29420,
+          "WV": 11764,
+          "MI": 3691
+        }
+      },
+      "STAT_PROFILE_DATE_YEAR": {
+        "count": 11,
+        "values": {
+          "2012": 21922,
+          "2015": 20981,
+          "2014": 20514,
+          "2008": 20228,
+          "2011": 19812,
+          "2013": 19412,
+          "2010": 19240,
+          "2007": 18772,
+          "2009": 18343,
+          "2006": 17685
+        }
+      },
+      "MONTHS": {
+        "count": 12,
+        "values": {
+          "12": 158094,
+          "5": 21655,
+          "8": 16791,
+          "2": 7908,
+          "7": 1295,
+          "10": 1258,
+          "3": 1151,
+          "1": 1128,
+          "9": 1046,
+          "11": 1020
+        }
+      },
+      "VENDOR_IND": {
+        "count": 2,
+        "values": {
+          "Y": 131926,
+          "N": 81402
+        }
+      },
+      "VENDOR": {
+        "count": 10,
+        "values": {
+          "Unknown": 81402,
+          "E": 52092,
+          "A": 35614,
+          "C": 21914,
+          "B": 9405,
+          "D": 5935,
+          "G": 3267,
+          "H": 2053,
+          "J": 1193,
+          "F": 453
+        }
+      },
+      "PL_START_YEAR": {
+        "count": 23,
+        "values": {
+          "99999": 82200,
+          "2008": 10111,
+          "2009": 8437,
+          "2001": 8280,
+          "2014": 8105,
+          "2011": 7448,
+          "2013": 7231,
+          "2004": 6235,
+          "2012": 5893,
+          "1995": 5847
+        }
+      },
+      "PL_END_YEAR": {
+        "count": 10,
+        "values": {
+          "99999": 209174,
+          "2015": 1009,
+          "2009": 928,
+          "2006": 725,
+          "2014": 492,
+          "2004": 315,
+          "2007": 268,
+          "2005": 195,
+          "2012": 129,
+          "2011": 93
+        }
+      },
+      "COMMISIONS_START_YEAR": {
+        "count": 14,
+        "values": {
+          "99999": 141937,
+          "2003": 10277,
+          "2010": 7945,
+          "2013": 6563,
+          "2012": 6117,
+          "2011": 6101,
+          "2008": 5891,
+          "2007": 5297,
+          "2015": 5208,
+          "2014": 5065
+        }
+      },
+      "COMMISIONS_END_YEAR": {
+        "count": 11,
+        "values": {
+          "99999": 205604,
+          "2010": 2425,
+          "2014": 1352,
+          "2015": 1115,
+          "2005": 991,
+          "2012": 598,
+          "2006": 491,
+          "2009": 246,
+          "2003": 227,
+          "2008": 173
+        }
+      },
+      "CL_START_YEAR": {
+        "count": 6,
+        "values": {
+          "99999": 129311,
+          "2011": 48497,
+          "2013": 9914,
+          "2012": 8969,
+          "2014": 8490,
+          "2015": 8147
+        }
+      },
+      "CL_END_YEAR": {
+        "count": 6,
+        "values": {
+          "99999": 204760,
+          "2011": 4067,
+          "2014": 1694,
+          "2013": 1308,
+          "2015": 1052,
+          "2012": 447
+        }
+      },
+      "ACTIVITY_NOTES_START_YEAR": {
+        "count": 4,
+        "values": {
+          "99999": 171536,
+          "2013": 24681,
+          "2014": 15022,
+          "2015": 2089
+        }
+      },
+      "ACTIVITY_NOTES_END_YEAR": {
+        "count": 3,
+        "values": {
+          "99999": 209258,
+          "2014": 3100,
+          "2015": 970
+        }
+      },
+      "CL_BOUND_CT_MDS": {
+        "count": 16,
+        "values": {
+          "99999": 98689,
+          "0": 62749,
+          "1": 23651,
+          "2": 11095,
+          "3": 5032,
+          "4": 4594,
+          "8": 2025,
+          "6": 1328,
+          "5": 1083,
+          "15": 766
+        }
+      },
+      "CL_QUO_CT_MDS": {
+        "count": 36,
+        "values": {
+          "99999": 98689,
+          "0": 34519,
+          "1": 23816,
+          "2": 10859,
+          "4": 6370,
+          "3": 5666,
+          "6": 4659,
+          "7": 3377,
+          "5": 3255,
+          "8": 3080
+        }
+      },
+      "CL_BOUND_CT_SBZ": {
+        "count": 24,
+        "values": {
+          "99999": 98689,
+          "0": 37148,
+          "1": 28771,
+          "2": 13272,
+          "4": 9462,
+          "3": 9355,
+          "5": 3279,
+          "7": 1973,
+          "8": 1845,
+          "6": 1446
+        }
+      },
+      "CL_QUO_CT_SBZ": {
+        "count": 30,
+        "values": {
+          "99999": 98689,
+          "1": 27317,
+          "0": 21557,
+          "2": 15501,
+          "3": 10920,
+          "4": 9406,
+          "5": 6198,
+          "7": 3939,
+          "8": 2509,
+          "11": 2218
+        }
+      },
+      "CL_BOUND_CT_eQT": {
+        "count": 20,
+        "values": {
+          "99999": 98689,
+          "0": 60328,
+          "1": 23929,
+          "2": 9877,
+          "4": 6352,
+          "3": 3566,
+          "7": 1827,
+          "6": 1750,
+          "15": 1499,
+          "12": 1242
+        }
+      },
+      "CL_QUO_CT_eQT": {
+        "count": 24,
+        "values": {
+          "99999": 98689,
+          "0": 53453,
+          "1": 24187,
+          "2": 10836,
+          "4": 5243,
+          "3": 4774,
+          "5": 3995,
+          "6": 2086,
+          "8": 1965,
+          "15": 1242
+        }
+      },
+      "PL_BOUND_CT_ELINKS": {
+        "count": 31,
+        "values": {
+          "0": 145598,
+          "99999": 57444,
+          "3": 1357,
+          "2": 870,
+          "6": 697,
+          "8": 669,
+          "5": 633,
+          "1": 621,
+          "22": 565,
+          "19": 531
+        }
+      },
+      "PL_BOUND_CT_APPLIED": {
+        "count": 22,
+        "values": {
+          "0": 144875,
+          "99999": 57444,
+          "1": 2628,
+          "2": 1302,
+          "5": 834,
+          "4": 820,
+          "18": 665,
+          "13": 596,
+          "74": 522,
+          "33": 514
+        }
+      },
+      "PL_QUO_CT_APPLIED": {
+        "count": 40,
+        "values": {
+          "0": 137616,
+          "99999": 57444,
+          "1": 2471,
+          "2": 1700,
+          "12": 1338,
+          "3": 1197,
+          "23": 949,
+          "5": 887,
+          "17": 778,
+          "394": 596
+        }
+      },
+      "PL_BOUND_CT_TRANSACTNOW": {
+        "count": 5,
+        "values": {
+          "0": 153886,
+          "99999": 57444,
+          "3": 867,
+          "2": 795,
+          "1": 336
+        }
+      },
+      "PL_QUO_CT_TRANSACTNOW": {
+        "count": 11,
+        "values": {
+          "0": 151070,
+          "99999": 57444,
+          "2": 1064,
+          "1": 852,
+          "3": 527,
+          "24": 523,
+          "11": 494,
+          "4": 406,
+          "22": 373,
+          "7": 303
+        }
+      }
+    },
+    "potential_issues": [],
+    "placeholder_99999": {
+      "PRIMARY_AGENCY_ID": 37874,
+      "PREV_POLY_INFORCE_QTY": 13893,
+      "NB_WRTN_PREM_AMT": 1,
+      "PREV_WRTN_PREM_AMT": 13893,
+      "RETENTION_RATIO": 129978,
+      "LOSS_RATIO": 51232,
+      "LOSS_RATIO_3YR": 49117,
+      "GROWTH_RATE_3YR": 91067,
+      "AGENCY_APPOINTMENT_YEAR": 5639,
+      "ACTIVE_PRODUCERS": 5639,
+      "MAX_AGE": 5639,
+      "MIN_AGE": 5639,
+      "PL_START_YEAR": 82200,
+      "PL_END_YEAR": 209174,
+      "COMMISIONS_START_YEAR": 141937,
+      "COMMISIONS_END_YEAR": 205604,
+      "CL_START_YEAR": 129311,
+      "CL_END_YEAR": 204760,
+      "ACTIVITY_NOTES_START_YEAR": 171536,
+      "ACTIVITY_NOTES_END_YEAR": 209258,
+      "CL_BOUND_CT_MDS": 98689,
+      "CL_QUO_CT_MDS": 98689,
+      "CL_BOUND_CT_SBZ": 98689,
+      "CL_QUO_CT_SBZ": 98689,
+      "CL_BOUND_CT_eQT": 98689,
+      "CL_QUO_CT_eQT": 98689,
+      "PL_BOUND_CT_ELINKS": 57444,
+      "PL_QUO_CT_ELINKS": 57444,
+      "PL_BOUND_CT_PLRANK": 57444,
+      "PL_QUO_CT_PLRANK": 57444,
+      "PL_BOUND_CT_eQTte": 57444,
+      "PL_QUO_CT_eQTte": 57444,
+      "PL_BOUND_CT_APPLIED": 57444,
+      "PL_QUO_CT_APPLIED": 57444,
+      "PL_BOUND_CT_TRANSACTNOW": 57444,
+      "PL_QUO_CT_TRANSACTNOW": 57444
+    }
+  },
+  "numeric_analysis": {
+    "AGENCY_ID": {
+      "count": 213328,
+      "mean": 4978.964158478962,
+      "median": 4976.0,
+      "std": 2928.0276415472367,
+      "min": 3.0,
+      "max": 9998.0,
+      "percentiles": {
+        "25%": 2366.0,
+        "75%": 7589.0
+      }
+    },
+    "PRIMARY_AGENCY_ID": {
+      "count": 175454,
+      "mean": 4969.569949958393,
+      "median": 4958.0,
+      "std": 2932.265434944529,
+      "min": 3.0,
+      "max": 9998.0,
+      "percentiles": {
+        "25%": 2358.0,
+        "75%": 7529.0
+      }
+    },
+    "STAT_PROFILE_DATE_YEAR": {
+      "count": 213328,
+      "mean": 2010.1917376059403,
+      "median": 2010.0,
+      "std": 3.129108076079342,
+      "min": 2005.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2008.0,
+        "75%": 2013.0
+      }
+    },
+    "RETENTION_POLY_QTY": {
+      "count": 213328,
+      "mean": 158.63452523813095,
+      "median": 0.0,
+      "std": 718.7662950402139,
+      "min": 0.0,
+      "max": 21979.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 24.0
+      }
+    },
+    "POLY_INFORCE_QTY": {
+      "count": 213328,
+      "mean": 175.6169185479637,
+      "median": 0.0,
+      "std": 774.6408596692371,
+      "min": 0.0,
+      "max": 22968.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 30.0
+      }
+    },
+    "PREV_POLY_INFORCE_QTY": {
+      "count": 199435,
+      "mean": 194.37031112893925,
+      "median": 0.0,
+      "std": 830.683407608497,
+      "min": 0.0,
+      "max": 24335.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 36.0
+      }
+    },
+    "NB_WRTN_PREM_AMT": {
+      "count": 213327,
+      "mean": 2243.1931259053003,
+      "median": 0.0,
+      "std": 9974.579795047444,
+      "min": 0.0,
+      "max": 556930.22,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 485.0
+      }
+    },
+    "WRTN_PREM_AMT": {
+      "count": 213328,
+      "mean": 19632.683771094275,
+      "median": 1143.62,
+      "std": 66443.95447412433,
+      "min": -202777.6,
+      "max": 1715741.77,
+      "percentiles": {
+        "25%": 2.0275,
+        "75%": 8358.695
+      }
+    },
+    "PREV_WRTN_PREM_AMT": {
+      "count": 199435,
+      "mean": 20853.78150374809,
+      "median": 1394.0,
+      "std": 69609.8263376951,
+      "min": -186181.04,
+      "max": 1904569.99,
+      "percentiles": {
+        "25%": 100.0,
+        "75%": 9230.305
+      }
+    },
+    "PRD_ERND_PREM_AMT": {
+      "count": 213328,
+      "mean": 19458.7189239106,
+      "median": 1180.49,
+      "std": 66351.15236071587,
+      "min": -164348.98,
+      "max": 1780498.16,
+      "percentiles": {
+        "25%": 76.0,
+        "75%": 8231.5625
+      }
+    },
+    "PRD_INCRD_LOSSES_AMT": {
+      "count": 213328,
+      "mean": 11072.956395550513,
+      "median": 0.0,
+      "std": 69472.7275754537,
+      "min": -5000000.0,
+      "max": 6241231.26,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "MONTHS": {
+      "count": 213328,
+      "mean": 10.37042019800495,
+      "median": 12.0,
+      "std": 3.008576297358041,
+      "min": 1.0,
+      "max": 12.0,
+      "percentiles": {
+        "25%": 10.0,
+        "75%": 12.0
+      }
+    },
+    "RETENTION_RATIO": {
+      "count": 83350,
+      "mean": 0.779570582794901,
+      "median": 0.8731430394999999,
+      "std": 0.2793042966592184,
+      "min": 0.0,
+      "max": 1.0,
+      "percentiles": {
+        "25%": 0.736842105,
+        "75%": 0.99333875925
+      }
+    },
+    "LOSS_RATIO": {
+      "count": 162096,
+      "mean": 1199.2056956929932,
+      "median": 0.0,
+      "std": 10881.154657967354,
+      "min": -756.2285714,
+      "max": 99998.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.13609087575
+      }
+    },
+    "LOSS_RATIO_3YR": {
+      "count": 164211,
+      "mean": 0.23328069260101952,
+      "median": 0.413243043,
+      "std": 49.39494234022492,
+      "min": -7215.007215,
+      "max": 540.3481013,
+      "percentiles": {
+        "25%": 0.206522866,
+        "75%": 0.658217462
+      }
+    },
+    "GROWTH_RATE_3YR": {
+      "count": 122261,
+      "mean": -0.018789708121898237,
+      "median": -0.02246751,
+      "std": 0.3606591186163358,
+      "min": -1.0,
+      "max": 5.188618343,
+      "percentiles": {
+        "25%": -0.094492098,
+        "75%": 0.055290165
+      }
+    },
+    "AGENCY_APPOINTMENT_YEAR": {
+      "count": 207689,
+      "mean": 1987.571022057018,
+      "median": 1990.0,
+      "std": 16.648359675735797,
+      "min": 1935.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 1977.0,
+        "75%": 2001.0
+      }
+    },
+    "ACTIVE_PRODUCERS": {
+      "count": 207689,
+      "mean": 27.40043045129978,
+      "median": 18.0,
+      "std": 28.399346072934055,
+      "min": 1.0,
+      "max": 301.0,
+      "percentiles": {
+        "25%": 11.0,
+        "75%": 33.0
+      }
+    },
+    "MAX_AGE": {
+      "count": 207689,
+      "mean": 77.20008281613374,
+      "median": 77.0,
+      "std": 10.092276421397349,
+      "min": 38.0,
+      "max": 100.0,
+      "percentiles": {
+        "25%": 70.0,
+        "75%": 85.0
+      }
+    },
+    "MIN_AGE": {
+      "count": 207689,
+      "mean": 37.36077500493526,
+      "median": 35.0,
+      "std": 10.48884330119937,
+      "min": 11.0,
+      "max": 99.0,
+      "percentiles": {
+        "25%": 30.0,
+        "75%": 43.0
+      }
+    },
+    "PL_START_YEAR": {
+      "count": 131128,
+      "mean": 2005.3351000549083,
+      "median": 2006.0,
+      "std": 6.05083463318513,
+      "min": 1994.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2000.0,
+        "75%": 2011.0
+      }
+    },
+    "PL_END_YEAR": {
+      "count": 4154,
+      "mean": 2009.9679826673087,
+      "median": 2009.0,
+      "std": 3.951814930639776,
+      "min": 2004.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2006.0,
+        "75%": 2014.0
+      }
+    },
+    "COMMISIONS_START_YEAR": {
+      "count": 71391,
+      "mean": 2009.1183342438123,
+      "median": 2010.0,
+      "std": 3.8112313146472836,
+      "min": 2003.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2006.0,
+        "75%": 2012.0
+      }
+    },
+    "COMMISIONS_END_YEAR": {
+      "count": 7724,
+      "mean": 2010.4397980321078,
+      "median": 2010.0,
+      "std": 3.5266141173343466,
+      "min": 2003.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2009.0,
+        "75%": 2014.0
+      }
+    },
+    "CL_START_YEAR": {
+      "count": 84017,
+      "mean": 2012.0337788780841,
+      "median": 2011.0,
+      "std": 1.403934094271811,
+      "min": 2011.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2011.0,
+        "75%": 2013.0
+      }
+    },
+    "CL_END_YEAR": {
+      "count": 8568,
+      "mean": 2012.4417600373483,
+      "median": 2012.0,
+      "std": 1.5258917967836478,
+      "min": 2011.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2011.0,
+        "75%": 2014.0
+      }
+    },
+    "ACTIVITY_NOTES_START_YEAR": {
+      "count": 41792,
+      "mean": 2013.4594180704441,
+      "median": 2013.0,
+      "std": 0.5901971944004603,
+      "min": 2013.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2013.0,
+        "75%": 2014.0
+      }
+    },
+    "ACTIVITY_NOTES_END_YEAR": {
+      "count": 4070,
+      "mean": 2014.2383292383292,
+      "median": 2014.0,
+      "std": 0.4261138639184417,
+      "min": 2014.0,
+      "max": 2015.0,
+      "percentiles": {
+        "25%": 2014.0,
+        "75%": 2014.0
+      }
+    },
+    "CL_BOUND_CT_MDS": {
+      "count": 114639,
+      "mean": 1.2533605492022784,
+      "median": 0.0,
+      "std": 2.3417259244801327,
+      "min": 0.0,
+      "max": 15.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 1.0
+      }
+    },
+    "CL_QUO_CT_MDS": {
+      "count": 114639,
+      "mean": 4.429574577587034,
+      "median": 1.0,
+      "std": 7.072667142800546,
+      "min": 0.0,
+      "max": 52.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 6.0
+      }
+    },
+    "CL_BOUND_CT_SBZ": {
+      "count": 114639,
+      "mean": 2.7246225106639104,
+      "median": 1.0,
+      "std": 4.669296615700093,
+      "min": 0.0,
+      "max": 33.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 3.0
+      }
+    },
+    "CL_QUO_CT_SBZ": {
+      "count": 114639,
+      "mean": 4.159544308655867,
+      "median": 2.0,
+      "std": 6.111255267210071,
+      "min": 0.0,
+      "max": 39.0,
+      "percentiles": {
+        "25%": 1.0,
+        "75%": 5.0
+      }
+    },
+    "CL_BOUND_CT_eQT": {
+      "count": 114639,
+      "mean": 1.776515845392929,
+      "median": 0.0,
+      "std": 4.032181314879688,
+      "min": 0.0,
+      "max": 36.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 2.0
+      }
+    },
+    "CL_QUO_CT_eQT": {
+      "count": 114639,
+      "mean": 2.276685944573836,
+      "median": 1.0,
+      "std": 4.592380612095687,
+      "min": 0.0,
+      "max": 37.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 2.0
+      }
+    },
+    "PL_BOUND_CT_ELINKS": {
+      "count": 155884,
+      "mean": 1.2087898693900592,
+      "median": 0.0,
+      "std": 7.823603726834521,
+      "min": 0.0,
+      "max": 213.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "PL_QUO_CT_ELINKS": {
+      "count": 155884,
+      "mean": 57.74161556028842,
+      "median": 0.0,
+      "std": 312.26738097122626,
+      "min": 0.0,
+      "max": 4805.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "PL_BOUND_CT_PLRANK": {
+      "count": 155884,
+      "mean": 6.1876780169869905,
+      "median": 0.0,
+      "std": 25.424797413632977,
+      "min": 0.0,
+      "max": 324.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "PL_QUO_CT_PLRANK": {
+      "count": 155884,
+      "mean": 153.92611172410253,
+      "median": 0.0,
+      "std": 434.32202571076874,
+      "min": 0.0,
+      "max": 3037.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 1.0
+      }
+    },
+    "PL_BOUND_CT_eQTte": {
+      "count": 155884,
+      "mean": 49.53873393035847,
+      "median": 24.0,
+      "std": 67.71513104895175,
+      "min": 0.0,
+      "max": 395.0,
+      "percentiles": {
+        "25%": 6.0,
+        "75%": 65.0
+      }
+    },
+    "PL_QUO_CT_eQTte": {
+      "count": 155884,
+      "mean": 224.60503964486412,
+      "median": 136.0,
+      "std": 270.86433439695566,
+      "min": 0.0,
+      "max": 2028.0,
+      "percentiles": {
+        "25%": 34.0,
+        "75%": 306.0
+      }
+    },
+    "PL_BOUND_CT_APPLIED": {
+      "count": 155884,
+      "mean": 1.0976623643221883,
+      "median": 0.0,
+      "std": 6.684763318431846,
+      "min": 0.0,
+      "max": 74.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "PL_QUO_CT_APPLIED": {
+      "count": 155884,
+      "mean": 8.645351671755922,
+      "median": 0.0,
+      "std": 47.81588015060309,
+      "min": 0.0,
+      "max": 446.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "PL_BOUND_CT_TRANSACTNOW": {
+      "count": 155884,
+      "mean": 0.029040825229016447,
+      "median": 0.0,
+      "std": 0.26789695123499135,
+      "min": 0.0,
+      "max": 3.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    },
+    "PL_QUO_CT_TRANSACTNOW": {
+      "count": 155884,
+      "mean": 0.23875445844345797,
+      "median": 0.0,
+      "std": 1.9472295668445643,
+      "min": 0.0,
+      "max": 24.0,
+      "percentiles": {
+        "25%": 0.0,
+        "75%": 0.0
+      }
+    }
+  },
+  "business_insights": {
+    "agency_performance": {
+      "total_agencies": 1623,
+      "top_agencies_by_premium": {
+        "5468": 46079054.07,
+        "9733": 33777988.77,
+        "1786": 32761878.06,
+        "886": 31047109.86,
+        "8365": 29442920.69,
+        "9362": 28675251.18,
+        "4351": 26006117.63,
+        "8652": 25909071.09,
+        "9761": 25433242.93,
+        "562": 25116238.12
+      }
+    },
+    "geographic_analysis": {
+      "agencies_by_state": {
+        "OH": 101323,
+        "IN": 34923,
+        "PA": 32207,
+        "KY": 29420,
+        "WV": 11764,
+        "MI": 3691
+      },
+      "total_states": 6
+    },
+    "product_line_analysis": {
+      "distribution": {
+        "CL": 124692,
+        "PL": 88636
+      }
+    },
+    "financial_metrics": {
+      "total_premium": 4188201163.5199995,
+      "avg_premium": 19632.683771094275
+    }
+  },
+  "timestamp": "2025-07-29T13:29:12.230638",
+  "csv_file": "finalapi.csv"
+}

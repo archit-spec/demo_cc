@@ -1,0 +1,252 @@
+{
+  "total_clean_records": 147769,
+  "data_quality_pct": 69.26845046126154,
+  "top_agencies": {
+    "5468": {
+      "WRTN_PREM_AMT": 43359429.08,
+      "LOSS_RATIO": 0.2188,
+      "RETENTION_RATIO": 55434.5825,
+      "ACTIVE_PRODUCERS": 57.0
+    },
+    "1786": {
+      "WRTN_PREM_AMT": 31901879.91,
+      "LOSS_RATIO": 0.1747,
+      "RETENTION_RATIO": 58888.6529,
+      "ACTIVE_PRODUCERS": 46.0
+    },
+    "9733": {
+      "WRTN_PREM_AMT": 29859644.91,
+      "LOSS_RATIO": 0.1632,
+      "RETENTION_RATIO": 52098.6398,
+      "ACTIVE_PRODUCERS": 55.0
+    },
+    "886": {
+      "WRTN_PREM_AMT": 29846973.73,
+      "LOSS_RATIO": 0.2015,
+      "RETENTION_RATIO": 48071.1948,
+      "ACTIVE_PRODUCERS": 28.0
+    },
+    "8365": {
+      "WRTN_PREM_AMT": 27153047.65,
+      "LOSS_RATIO": 0.1619,
+      "RETENTION_RATIO": 65384.2592,
+      "ACTIVE_PRODUCERS": 77.0
+    },
+    "4351": {
+      "WRTN_PREM_AMT": 24951545.27,
+      "LOSS_RATIO": 0.1762,
+      "RETENTION_RATIO": 56263.5352,
+      "ACTIVE_PRODUCERS": 39.0
+    },
+    "9362": {
+      "WRTN_PREM_AMT": 24929406.69,
+      "LOSS_RATIO": 0.1243,
+      "RETENTION_RATIO": 70883.0671,
+      "ACTIVE_PRODUCERS": 135.0
+    },
+    "9761": {
+      "WRTN_PREM_AMT": 24209326.04,
+      "LOSS_RATIO": 0.1851,
+      "RETENTION_RATIO": 47653.3903,
+      "ACTIVE_PRODUCERS": 27.0
+    },
+    "8652": {
+      "WRTN_PREM_AMT": 24184567.73,
+      "LOSS_RATIO": 0.19,
+      "RETENTION_RATIO": 68819.7896,
+      "ACTIVE_PRODUCERS": 102.0
+    },
+    "562": {
+      "WRTN_PREM_AMT": 23939941.84,
+      "LOSS_RATIO": 0.1811,
+      "RETENTION_RATIO": 61467.6155,
+      "ACTIVE_PRODUCERS": 22.0
+    }
+  },
+  "geographic_performance": {
+    "IN": {
+      "Total_Premium": 404855783.94,
+      "Avg_Premium": 18245.7877,
+      "Avg_Loss_Ratio": 0.1327,
+      "Avg_Retention": 63679.8624,
+      "Num_Agencies": 449,
+      "Total_Producers": 30415588
+    },
+    "KY": {
+      "Total_Premium": 449576614.21,
+      "Avg_Premium": 23030.409,
+      "Avg_Loss_Ratio": 0.1368,
+      "Avg_Retention": 64765.7949,
+      "Num_Agencies": 371,
+      "Total_Producers": 26173962
+    },
+    "MI": {
+      "Total_Premium": 42716272.5,
+      "Avg_Premium": 19328.6301,
+      "Avg_Loss_Ratio": 0.0978,
+      "Avg_Retention": 99999.0,
+      "Num_Agencies": 113,
+      "Total_Producers": 1281199
+    },
+    "OH": {
+      "Total_Premium": 2280980609.99,
+      "Avg_Premium": 30597.0652,
+      "Avg_Loss_Ratio": 0.1496,
+      "Avg_Retention": 54034.1085,
+      "Num_Agencies": 847,
+      "Total_Producers": 72598132
+    },
+    "PA": {
+      "Total_Premium": 505434829.68,
+      "Avg_Premium": 23651.6064,
+      "Avg_Loss_Ratio": 0.1382,
+      "Avg_Retention": 65151.7328,
+      "Num_Agencies": 396,
+      "Total_Producers": 38553372
+    },
+    "WV": {
+      "Total_Premium": 175236281.43,
+      "Avg_Premium": 22097.8917,
+      "Avg_Loss_Ratio": 0.1125,
+      "Avg_Retention": 66657.8789,
+      "Num_Agencies": 187,
+      "Total_Producers": 17554169
+    }
+  },
+  "risk_metrics": {
+    "high_loss_ratio_agencies": 1080,
+    "low_retention_agencies": 1062,
+    "volatile_agencies": 1373,
+    "total_agencies": 1373
+  },
+  "market_opportunities": {
+    "MI": {
+      "Total_Premium": 42716272.5,
+      "Avg_Premium": 19328.6301,
+      "Avg_Loss_Ratio": 0.0978,
+      "Avg_Retention": 99999.0,
+      "Num_Agencies": 113,
+      "Total_Producers": 1281199,
+      "Premium_per_Agency": 378020.110619469,
+      "Opportunity_Score": 40000.14132
+    },
+    "WV": {
+      "Total_Premium": 175236281.43,
+      "Avg_Premium": 22097.8917,
+      "Avg_Loss_Ratio": 0.1125,
+      "Avg_Retention": 66657.8789,
+      "Num_Agencies": 187,
+      "Total_Producers": 17554169,
+      "Premium_per_Agency": 937092.4140641711,
+      "Opportunity_Score": 26663.68406
+    },
+    "PA": {
+      "Total_Premium": 505434829.68,
+      "Avg_Premium": 23651.6064,
+      "Avg_Loss_Ratio": 0.1382,
+      "Avg_Retention": 65151.7328,
+      "Num_Agencies": 396,
+      "Total_Producers": 38553372,
+      "Premium_per_Agency": 1276350.58,
+      "Opportunity_Score": 26061.2102
+    },
+    "KY": {
+      "Total_Premium": 449576614.21,
+      "Avg_Premium": 23030.409,
+      "Avg_Loss_Ratio": 0.1368,
+      "Avg_Retention": 64765.7949,
+      "Num_Agencies": 371,
+      "Total_Producers": 26173962,
+      "Premium_per_Agency": 1211796.803800539,
+      "Opportunity_Score": 25906.83588
+    },
+    "IN": {
+      "Total_Premium": 404855783.94,
+      "Avg_Premium": 18245.7877,
+      "Avg_Loss_Ratio": 0.1327,
+      "Avg_Retention": 63679.8624,
+      "Num_Agencies": 449,
+      "Total_Producers": 30415588,
+      "Premium_per_Agency": 901683.2604454343,
+      "Opportunity_Score": 25472.465340000002
+    },
+    "OH": {
+      "Total_Premium": 2280980609.99,
+      "Avg_Premium": 30597.0652,
+      "Avg_Loss_Ratio": 0.1496,
+      "Avg_Retention": 54034.1085,
+      "Num_Agencies": 847,
+      "Total_Producers": 72598132,
+      "Premium_per_Agency": 2693011.345914994,
+      "Opportunity_Score": 21614.15364
+    }
+  },
+  "yearly_trends": {
+    "2005": {
+      "WRTN_PREM_AMT": 250217839.76,
+      "LOSS_RATIO": 0.1228,
+      "RETENTION_RATIO": 56603.0809,
+      "AGENCY_ID": 893
+    },
+    "2006": {
+      "WRTN_PREM_AMT": 386494308.12,
+      "LOSS_RATIO": 0.1372,
+      "RETENTION_RATIO": 58813.3768,
+      "AGENCY_ID": 954
+    },
+    "2007": {
+      "WRTN_PREM_AMT": 380391685.92,
+      "LOSS_RATIO": 0.1402,
+      "RETENTION_RATIO": 59282.2758,
+      "AGENCY_ID": 987
+    },
+    "2008": {
+      "WRTN_PREM_AMT": 381766319.4,
+      "LOSS_RATIO": 0.167,
+      "RETENTION_RATIO": 60009.9706,
+      "AGENCY_ID": 1025
+    },
+    "2009": {
+      "WRTN_PREM_AMT": 381843100.33,
+      "LOSS_RATIO": 0.1613,
+      "RETENTION_RATIO": 60343.3416,
+      "AGENCY_ID": 1038
+    },
+    "2010": {
+      "WRTN_PREM_AMT": 376770005.79,
+      "LOSS_RATIO": 0.1442,
+      "RETENTION_RATIO": 60230.9272,
+      "AGENCY_ID": 1039
+    },
+    "2011": {
+      "WRTN_PREM_AMT": 366017946.08,
+      "LOSS_RATIO": 0.156,
+      "RETENTION_RATIO": 59436.6631,
+      "AGENCY_ID": 1014
+    },
+    "2012": {
+      "WRTN_PREM_AMT": 374629547.58,
+      "LOSS_RATIO": 0.1475,
+      "RETENTION_RATIO": 63836.1219,
+      "AGENCY_ID": 1023
+    },
+    "2013": {
+      "WRTN_PREM_AMT": 396147682.59,
+      "LOSS_RATIO": 0.1281,
+      "RETENTION_RATIO": 61655.7082,
+      "AGENCY_ID": 1010
+    },
+    "2014": {
+      "WRTN_PREM_AMT": 403580710.22,
+      "LOSS_RATIO": 0.1269,
+      "RETENTION_RATIO": 60358.9117,
+      "AGENCY_ID": 1001
+    },
+    "2015": {
+      "WRTN_PREM_AMT": 160941245.96,
+      "LOSS_RATIO": 0.1125,
+      "RETENTION_RATIO": 56530.752,
+      "AGENCY_ID": 954
+    }
+  }
+}
