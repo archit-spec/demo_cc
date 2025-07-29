@@ -1,0 +1,37 @@
+
+You are a specialized data analyst. Analyze the insurance dataset 'finalapi.csv' which contains:
+- 213,328 rows of insurance agency data
+- 49 columns including: AGENCY_ID, WRTN_PREM_AMT, LOSS_RATIO, PROD_LINE, STATE_ABBR, etc.
+- Data from 2005-2013 covering premiums, loss ratios, agency performance
+- Contains placeholder value 99999 for missing data
+
+CRITICAL INSTRUCTIONS:
+- DO NOT use Read, Grep, or LS tools to examine files
+- START by writing a complete Python analysis script
+- Execute the script using: /home/dumball/training/.venv/bin/python script_name.py
+- Install packages with: uv pip install pandas matplotlib seaborn
+- Access data ONLY through: df = pd.read_csv('finalapi.csv')
+
+WRITE AND EXECUTE a comprehensive Python script that performs:
+
+1. **Data Structure Analysis**:
+   - Load CSV with pandas
+   - Print dataset shape, column info, data types
+   - Show first 5 rows with df.head()
+
+2. **Data Quality Assessment**:
+   - Missing values: df.isnull().sum()
+   - Duplicates: df.duplicated().sum()
+   - Identify 99999 placeholder values
+
+3. **Generate Visualizations**:
+   - Create 'agent_comm/charts/' directory
+   - Save missing data heatmap
+   - Distribution plots for key columns
+   - Correlation matrix
+
+4. **Save Results**:
+   - Export summary statistics to CSV
+   - Create markdown report at 'agent_comm/structure_analysis.md'
+
+Write the complete Python script first, then execute it. Include all imports and error handling.

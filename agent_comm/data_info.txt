@@ -1,0 +1,54 @@
+Dataset Shape: (213328, 49)
+Total Rows: 213,328
+Total Columns: 49
+
+Column Information:
+ 1. AGENCY_ID                 | int64          
+ 2. PRIMARY_AGENCY_ID         | int64          
+ 3. PROD_ABBR                 | object         
+ 4. PROD_LINE                 | object         
+ 5. STATE_ABBR                | object         
+ 6. STAT_PROFILE_DATE_YEAR    | int64          
+ 7. RETENTION_POLY_QTY        | int64          
+ 8. POLY_INFORCE_QTY          | int64          
+ 9. PREV_POLY_INFORCE_QTY     | int64          
+10. NB_WRTN_PREM_AMT          | float64        
+11. WRTN_PREM_AMT             | float64        
+12. PREV_WRTN_PREM_AMT        | float64        
+13. PRD_ERND_PREM_AMT         | float64        
+14. PRD_INCRD_LOSSES_AMT      | float64        
+15. MONTHS                    | int64          
+16. RETENTION_RATIO           | float64        
+17. LOSS_RATIO                | float64        
+18. LOSS_RATIO_3YR            | float64        
+19. GROWTH_RATE_3YR           | float64        
+20. AGENCY_APPOINTMENT_YEAR   | int64          
+21. ACTIVE_PRODUCERS          | int64          
+22. MAX_AGE                   | int64          
+23. MIN_AGE                   | int64          
+24. VENDOR_IND                | object         
+25. VENDOR                    | object         
+26. PL_START_YEAR             | int64          
+27. PL_END_YEAR               | int64          
+28. COMMISIONS_START_YEAR     | int64          
+29. COMMISIONS_END_YEAR       | int64          
+30. CL_START_YEAR             | int64          
+31. CL_END_YEAR               | int64          
+32. ACTIVITY_NOTES_START_YEAR | int64          
+33. ACTIVITY_NOTES_END_YEAR   | int64          
+34. CL_BOUND_CT_MDS           | int64          
+35. CL_QUO_CT_MDS             | int64          
+36. CL_BOUND_CT_SBZ           | int64          
+37. CL_QUO_CT_SBZ             | int64          
+38. CL_BOUND_CT_eQT           | int64          
+39. CL_QUO_CT_eQT             | int64          
+40. PL_BOUND_CT_ELINKS        | int64          
+41. PL_QUO_CT_ELINKS          | int64          
+42. PL_BOUND_CT_PLRANK        | int64          
+43. PL_QUO_CT_PLRANK          | int64          
+44. PL_BOUND_CT_eQTte         | int64          
+45. PL_QUO_CT_eQTte           | int64          
+46. PL_BOUND_CT_APPLIED       | int64          
+47. PL_QUO_CT_APPLIED         | int64          
+48. PL_BOUND_CT_TRANSACTNOW   | int64          
+49. PL_QUO_CT_TRANSACTNOW     | int64          

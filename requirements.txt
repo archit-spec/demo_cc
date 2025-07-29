@@ -1,0 +1,6 @@
+claude-code-sdk
+pandas
+numpy
+matplotlib
+seaborn
+plotly
