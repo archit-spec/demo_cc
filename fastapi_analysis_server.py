@@ -190,26 +190,79 @@ def run_advanced_analysis_with_monitoring(csv_filename: str = "finalapi.csv", ou
         if analysis_id:
             start_file_monitoring(analysis_id, ["research.md", "analysis.log", "error.log"])
         
-        # Build Claude CLI command
+        # Build Claude CLI command with deep investigative analysis
         research_prompt = f'''
-        Build a detailed research report for @{csv_filename} and save it as research.md. 
+        Build a detailed INVESTIGATIVE research report for @{csv_filename} and save it as research.md. 
         
-        I want a comprehensive research report on the DATA (not about the file itself), including:
+        This is insurance agency data with 213,328 rows covering 2005-2013. I need DEEP INVESTIGATIVE ANALYSIS to understand WHY some agencies succeed while others fail.
         
-        1. **Executive Summary** - Key findings and insights
-        2. **Data Overview** - Structure, size, and quality assessment
-        3. **Statistical Analysis** - Descriptive statistics, distributions, correlations
-        4. **Business Intelligence** - Performance metrics, trends, patterns
-        5. **Geographic Analysis** - Regional insights and comparisons
-        6. **Risk Assessment** - Loss ratios, risk factors, outliers
-        7. **Market Opportunities** - Growth areas, underperforming segments
-        8. **Recommendations** - Actionable insights and strategic recommendations
-        9. **Visualizations** - Create charts and graphs to support findings
-        10. **Appendix** - Technical details and methodology
+        **CRITICAL INVESTIGATIVE REQUIREMENTS:**
         
-        Use any tools you need - pandas, matplotlib, seaborn, etc.
-        Focus on business value and actionable insights.
-        Make it comprehensive and professional.
+        1. **TOP & BOTTOM PERFORMERS IDENTIFICATION**
+           - Identify top 10% and bottom 10% performing agencies by multiple metrics
+           - Analyze AGENCY_ID, WRTN_PREM_AMT, LOSS_RATIO, RETENTION_RATIO, GROWTH_RATE_3YR
+           - Create performance scoring system combining financial and operational metrics
+           
+        2. **ROOT CAUSE ANALYSIS - WHY DO THEY SUCCEED/FAIL?**
+           - Compare high vs low performers across ALL dimensions
+           - Geographic clustering patterns (STATE_ABBR analysis)
+           - Product line specialization effects (PROD_LINE analysis)  
+           - Producer efficiency patterns (ACTIVE_PRODUCERS vs premiums)
+           - Temporal performance trends (year-over-year changes)
+           - Size vs efficiency analysis (small vs large agencies)
+           
+        3. **PREDICTIVE PERFORMANCE INDICATORS**
+           - What early warning signs predict agency failure?
+           - Which metrics are most predictive of future success?
+           - Identify agencies currently at risk based on patterns
+           - Find agencies with hidden potential for growth
+           
+        4. **MARKET DYNAMICS INVESTIGATION**
+           - Competitive positioning analysis by region
+           - Market share concentration effects
+           - Cross-selling effectiveness patterns
+           - New business vs renewal business analysis
+           - Premium pricing strategy effectiveness
+           
+        5. **DEEP STATISTICAL ANALYSIS**
+           - Correlation matrices between all performance metrics
+           - Regression analysis to identify key success drivers
+           - Outlier analysis - who breaks the normal patterns and why?
+           - Time series analysis of performance evolution
+           - Cohort analysis by agency age/entry year
+           
+        6. **ACTIONABLE BUSINESS INTELLIGENCE**
+           - Investment allocation recommendations (which agencies to invest in)
+           - Risk mitigation strategies (which agencies need intervention)
+           - Market expansion opportunities (underserved geographic areas)
+           - Best practice playbook from top performers
+           - Benchmarking standards for different agency types
+           
+        7. **SPECIFIC INVESTIGATIVE QUESTIONS TO ANSWER:**
+           - Why do some agencies maintain <50% loss ratios while others exceed 100%?
+           - What geographic factors correlate with agency success?
+           - How does producer count affect per-producer productivity?
+           - Which product lines generate the most profitable agencies?
+           - What retention patterns separate winners from losers?
+           - How do growth agencies differ from stable agencies?
+           
+        **EXECUTION REQUIREMENTS:**
+        - Use advanced pandas analysis, statistical modeling, machine learning if needed
+        - Create detailed visualizations showing performance patterns
+        - Generate specific agency lists (top 50 performers, bottom 50, at-risk agencies)
+        - Include statistical significance testing for all findings
+        - Calculate specific ROI and performance benchmarks
+        - Provide concrete numeric thresholds for performance categories
+        
+        **DELIVERABLES:**
+        - Executive summary with 10 key investigative findings
+        - Detailed agency performance rankings with explanations
+        - Risk assessment matrix for all agencies
+        - Investment priority recommendations with expected returns
+        - Market opportunity map with specific targets
+        - Performance improvement playbook based on top performer analysis
+        
+        Make this a true INVESTIGATIVE ANALYSIS that uncovers hidden patterns and provides specific, actionable intelligence for business decisions.
         '''
         
         # Run Claude CLI command
@@ -292,7 +345,7 @@ async def root():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance Data Analysis - Autonomous Data Research Agent</title>
+    <title>Insurance Agency Intelligence - Deep Investigative Analysis</title>
     <style>
         * {
             margin: 0;
@@ -516,8 +569,8 @@ async def root():
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏥 Insurance Data Analysis</h1>
-            <p>Autonomous AI-powered data exploration for insurance datasets</p>
+            <h1>🕵️ Insurance Agency Intelligence</h1>
+            <p>Deep investigative analysis to uncover why agencies succeed or fail</p>
         </div>
 
         <div class="main-content">
@@ -542,15 +595,15 @@ async def root():
             </button>
 
             <div class="quick-analyze">
-                <h3 style="margin-bottom: 15px; color: #2c3e50;">🚀 Quick Analysis</h3>
+                <h3 style="margin-bottom: 15px; color: #2c3e50;">🕵️ Investigative Analysis</h3>
                 <p style="margin-bottom: 15px; color: #6c757d;">
-                    Try with the default finalapi.csv dataset (213K insurance records)
+                    Deep analysis of 213K insurance agency records - discover top/bottom performers and why
                 </p>
                 <a href="/analyze-now" class="quick-analyze-button" style="margin-right: 10px;">
-                    ⚡ Standard Analysis
+                    ⚡ Complete Investigation
                 </a>
                 <a href="/realtime" class="quick-analyze-button" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-                    🔴 Real-time Analysis
+                    🔴 Live Investigation
                 </a>
             </div>
 
@@ -765,6 +818,19 @@ async def analyze_now():
             </html>
             """
             return error_html
+            
+    except Exception as e:
+        error_html = f"""
+        <!DOCTYPE html>
+        <html>
+        <head><title>Analysis Error</title></head>
+        <body>
+            <h1>❌ Analysis Failed</h1>
+            <p>Exception: {str(e)}</p>
+        </body>
+        </html>
+        """
+        return error_html
 
 @app.get("/realtime", response_class=HTMLResponse)
 async def realtime_analysis():

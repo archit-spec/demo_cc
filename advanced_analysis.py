@@ -1,155 +1,131 @@
-#!/usr/bin/env python3
-"""
-Advanced Insurance Analytics - Deep Business Intelligence Analysis
-"""
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-import subprocess
-import os
-import logging
-import time
-from pathlib import Path
-from dotenv import load_dotenv
+# Load the dataset
+df = pd.read_csv('finalapi.csv')
+df_clean = df.replace(99999, np.nan)
 
-# Load environment variables from .env file
-load_dotenv()
+print("=== ADVANCED MARKET OPPORTUNITY ANALYSIS ===")
 
-def run_advanced_analysis():
-    """Run advanced insurance business analytics"""
-    
-    # Set up environment
-    os.environ['PATH'] = '/home/dumball/.nvm/versions/node/v18.17.0/bin:' + os.environ.get('PATH', '')
-    os.environ['ANTHROPIC_API_KEY'] = os.getenv('ANTHROPIC_API_KEY')
-    
-    prompt = """
-You are a senior insurance data scientist and business analyst. Perform ADVANCED analytics on 'finalapi.csv' containing 213,328 insurance agency records (2005-2013).
+# Growth rate analysis
+print("\n1. GROWTH OPPORTUNITIES BY SEGMENT")
+growth_analysis = df_clean[df_clean['GROWTH_RATE_3YR'].notna() & 
+                          (df_clean['GROWTH_RATE_3YR'] != 0)].groupby(['PROD_ABBR', 'STATE_ABBR']).agg({
+    'GROWTH_RATE_3YR': 'mean',
+    'WRTN_PREM_AMT': 'sum'
+}).round(3)
 
-CRITICAL: DO NOT do basic data exploration. I need SOPHISTICATED BUSINESS INTELLIGENCE ANALYSIS.
+print("Top growth segments (by 3-year growth rate):")
+top_growth = growth_analysis[growth_analysis['WRTN_PREM_AMT'] > 1000000]  # Minimum $1M premium
+top_growth = top_growth.sort_values('GROWTH_RATE_3YR', ascending=False).head(15)
+print(top_growth)
 
-Dataset context:
-- Insurance agencies with premiums, loss ratios, retention rates, growth metrics
-- AGENCY_ID, WRTN_PREM_AMT (written premiums), LOSS_RATIO, PROD_LINE, STATE_ABBR
-- Time series data from 2005-2013 with 99999 as missing value indicator
+# Retention analysis
+print("\n2. RETENTION ANALYSIS")
+retention_analysis = df_clean[df_clean['RETENTION_RATIO'].notna() & 
+                             (df_clean['RETENTION_RATIO'] != 0)].groupby('PROD_ABBR').agg({
+    'RETENTION_RATIO': ['mean', 'std', 'count'],
+    'WRTN_PREM_AMT': 'sum'
+}).round(3)
 
-CRITICAL INSTRUCTIONS:
-- Execute Python scripts using: /home/dumball/training/.venv/bin/python script_name.py
-- Install packages by first activating venv: source /home/dumball/training/.venv/bin/activate && uv pip install pandas scikit-learn plotly seaborn matplotlib
-- Or use direct pip: /home/dumball/training/.venv/bin/pip install pandas scikit-learn plotly seaborn matplotlib
-- DO NOT use Read/Grep/LS tools - only Python pandas for data access
+print("Product retention rates:")
+print(retention_analysis)
 
-REQUIRED ADVANCED ANALYSES - Write and execute Python scripts:
+# Underperforming segments
+print("\n3. UNDERPERFORMING SEGMENTS")
+# Calculate average loss ratio by product and identify high-risk products
+loss_ratio_by_product = df_clean[df_clean['LOSS_RATIO'].notna() & 
+                                (df_clean['LOSS_RATIO'] > 0) & 
+                                (df_clean['LOSS_RATIO'] <= 10)].groupby('PROD_ABBR').agg({
+    'LOSS_RATIO': ['mean', 'median', 'count'],
+    'WRTN_PREM_AMT': 'sum',
+    'PRD_INCRD_LOSSES_AMT': 'sum'
+}).round(3)
 
-1. **FINANCIAL PERFORMANCE SEGMENTATION**:
-   - Segment agencies into performance tiers (top 10%, middle 80%, bottom 10%)
-   - Calculate ROI, profit margins, premium efficiency ratios
-   - Identify high-value, high-growth agencies vs declining performers
-   - Generate agency performance scorecards
+print("Loss ratios by product line:")
+print(loss_ratio_by_product)
 
-2. **PREDICTIVE LOSS MODELING**:
-   - Build models to predict loss ratios based on agency characteristics
-   - Identify leading indicators of agency failure/success
-   - Calculate risk-adjusted premium pricing recommendations
-   - Generate early warning system for high-risk agencies
+# Market concentration analysis
+print("\n4. MARKET CONCENTRATION ANALYSIS")
+state_concentration = df_clean.groupby('STATE_ABBR')['WRTN_PREM_AMT'].sum().sort_values(ascending=False)
+total_premium = state_concentration.sum()
+state_concentration_pct = (state_concentration / total_premium * 100).round(2)
 
-3. **MARKET OPPORTUNITY ANALYSIS**:
-   - Geographic market penetration analysis by state
-   - Product line profitability and cross-selling opportunities  
-   - Competitive positioning and white space identification
-   - Growth trajectory forecasting by market segment
+print("Market share by state:")
+print(state_concentration_pct)
 
-4. **CUSTOMER LIFETIME VALUE ANALYTICS**:
-   - Calculate CLV for different agency segments
-   - Retention curve analysis and churn prediction
-   - Revenue optimization strategies by agency type
-   - Investment allocation recommendations
+# Agency size distribution
+print("\n5. AGENCY SIZE DISTRIBUTION")
+agency_sizes = df_clean.groupby('AGENCY_ID')['WRTN_PREM_AMT'].sum()
+size_buckets = pd.cut(agency_sizes, bins=[0, 100000, 500000, 1000000, 5000000, float('inf')], 
+                     labels=['Small (<$100K)', 'Medium ($100K-$500K)', 
+                            'Large ($500K-$1M)', 'Very Large ($1M-$5M)', 'Enterprise (>$5M)'])
+size_distribution = size_buckets.value_counts()
+print("Agency size distribution:")
+print(size_distribution)
 
-5. **ADVANCED VISUALIZATIONS**:
-   - Executive dashboard with KPI scorecards
-   - Geographic heat maps of performance metrics
-   - Time series trend analysis with forecasting
-   - Interactive business intelligence charts
+# Digital channel analysis
+print("\n6. DIGITAL CHANNEL ANALYSIS")
+digital_metrics = df_clean.groupby('PROD_ABBR').agg({
+    'PL_BOUND_CT_ELINKS': 'sum',
+    'PL_QUO_CT_ELINKS': 'sum',
+    'PL_BOUND_CT_eQTte': 'sum',
+    'PL_QUO_CT_eQTte': 'sum',
+    'WRTN_PREM_AMT': 'sum'
+}).round(0)
 
-DELIVERABLES:
-- Execute comprehensive Python analysis (use pandas, scikit-learn, plotly)
-- Save 10+ professional charts to 'agent_comm/charts/'
-- Generate executive summary with actionable insights
-- Create detailed markdown report at 'agent_comm/advanced_insurance_analysis.md'
-- Export business intelligence data to CSV files
+# Calculate conversion rates
+digital_metrics['ELINKS_conversion'] = np.where(digital_metrics['PL_QUO_CT_ELINKS'] > 0,
+                                               digital_metrics['PL_BOUND_CT_ELINKS'] / digital_metrics['PL_QUO_CT_ELINKS'],
+                                               0)
+digital_metrics['eQTte_conversion'] = np.where(digital_metrics['PL_QUO_CT_eQTte'] > 0,
+                                              digital_metrics['PL_BOUND_CT_eQTte'] / digital_metrics['PL_QUO_CT_eQTte'],
+                                              0)
 
-Focus on BUSINESS VALUE and ACTIONABLE RECOMMENDATIONS for insurance executives.
-Use statistical modeling, machine learning, and advanced visualization techniques.
-"""
-    
-    print("🚀 Running Advanced Insurance Analytics with Claude CLI...")
-    
-    try:
-        cmd = [
-            'claude',
-            '--print', 
-            '--allowedTools', 'Write Bash Edit MultiEdit',
-            '--dangerously-skip-permissions',
-            prompt
-        ]
-        
-        print("💻 Executing advanced analytics...")
-        
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=600,  # 10 minute timeout for complex analysis
-            cwd='/home/dumball/ccagent'
-        )
-        
-        print(f"✅ Analysis completed with return code: {result.returncode}")
-        
-        if result.stdout:
-            print("📊 ANALYSIS OUTPUT:")
-            print(result.stdout)
-        
-        if result.stderr:
-            print("⚠️ ERRORS:")
-            print(result.stderr)
-        
-        return result
-        
-    except subprocess.TimeoutExpired:
-        print("❌ Analysis timed out after 10 minutes")
-        return None
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return None
+print("Digital channel performance by product:")
+print(digital_metrics[digital_metrics['PL_QUO_CT_ELINKS'] > 0].head(10))
 
-def check_advanced_results():
-    """Check generated advanced analysis files"""
-    print("\n📈 Advanced Analysis Results:")
-    
-    # Check for analysis files
-    agent_comm = Path('agent_comm')
-    if agent_comm.exists():
-        analysis_files = list(agent_comm.glob('*analysis*.md'))
-        print(f"📋 Analysis Reports: {[f.name for f in analysis_files]}")
-        
-        charts_dir = agent_comm / 'charts'
-        if charts_dir.exists():
-            charts = list(charts_dir.glob('*.png'))
-            print(f"📊 Generated Charts: {len(charts)} files")
-            for chart in charts:
-                print(f"  📈 {chart.name}")
-        
-        csv_files = list(agent_comm.glob('*.csv'))
-        print(f"📊 Data Exports: {[f.name for f in csv_files]}")
-    
-    # Check for Python analysis scripts
-    analysis_scripts = list(Path('.').glob('*analysis*.py'))
-    print(f"🐍 Analysis Scripts: {[s.name for s in analysis_scripts if 'advanced' not in s.name]}")
+# Create additional visualizations
+print("\n=== CREATING ADDITIONAL VISUALIZATIONS ===")
 
-if __name__ == "__main__":
-    print("🏢 ADVANCED INSURANCE BUSINESS INTELLIGENCE ANALYTICS")
-    print("="*60)
-    
-    result = run_advanced_analysis()
-    check_advanced_results()
-    
-    print("\n" + "="*60)
-    print("📊 Advanced analytics completed!")
-    print("🔍 Check agent_comm/ for comprehensive business intelligence reports.")
+# 6. Agency size distribution
+plt.figure(figsize=(10, 6))
+size_distribution.plot(kind='bar', color='skyblue', edgecolor='black')
+plt.title('Distribution of Agencies by Premium Size')
+plt.xlabel('Agency Size Category')
+plt.ylabel('Number of Agencies')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('agency_size_distribution.png', dpi=300, bbox_inches='tight')
+plt.close()
+
+# 7. Market concentration by state
+plt.figure(figsize=(10, 6))
+state_concentration_pct.plot(kind='pie', autopct='%1.1f%%', startangle=90)
+plt.title('Market Share by State')
+plt.ylabel('')
+plt.tight_layout()
+plt.savefig('market_concentration.png', dpi=300, bbox_inches='tight')
+plt.close()
+
+# 8. Growth vs. Premium scatter plot
+plt.figure(figsize=(12, 8))
+growth_data = df_clean[(df_clean['GROWTH_RATE_3YR'].notna()) & 
+                      (df_clean['GROWTH_RATE_3YR'] != 0) &
+                      (df_clean['GROWTH_RATE_3YR'] > -1) &
+                      (df_clean['GROWTH_RATE_3YR'] < 1)]
+
+plt.scatter(growth_data['GROWTH_RATE_3YR'], growth_data['WRTN_PREM_AMT'], 
+           alpha=0.6, c=pd.Categorical(growth_data['PROD_LINE']).codes, cmap='viridis')
+plt.xlabel('3-Year Growth Rate')
+plt.ylabel('Written Premium ($)')
+plt.title('Growth Rate vs. Premium Volume')
+plt.colorbar(label='Product Line')
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.savefig('growth_vs_premium.png', dpi=300, bbox_inches='tight')
+plt.close()
+
+print("Advanced analysis complete!")
