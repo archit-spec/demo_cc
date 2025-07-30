@@ -196,71 +196,37 @@ def run_advanced_analysis_with_monitoring(csv_filename: str = "finalapi.csv", ou
         
         This is insurance agency data with 213,328 rows covering 2005-2013. I need DEEP INVESTIGATIVE ANALYSIS to understand WHY some agencies succeed while others fail.
         
-        **CRITICAL INVESTIGATIVE REQUIREMENTS:**
+        **QUICK INVESTIGATIVE ANALYSIS (10-15 minute focus):**
         
-        1. **TOP & BOTTOM PERFORMERS IDENTIFICATION**
-           - Identify top 10% and bottom 10% performing agencies by multiple metrics
-           - Analyze AGENCY_ID, WRTN_PREM_AMT, LOSS_RATIO, RETENTION_RATIO, GROWTH_RATE_3YR
-           - Create performance scoring system combining financial and operational metrics
+        1. **TOP & BOTTOM 5 PERFORMERS ONLY**
+           - Identify top 5 and bottom 5 agencies by loss ratio and premium volume
+           - Focus on AGENCY_ID, WRTN_PREM_AMT, LOSS_RATIO, STATE_ABBR
+           - Quick performance scoring using 2-3 key metrics only
            
-        2. **ROOT CAUSE ANALYSIS - WHY DO THEY SUCCEED/FAIL?**
-           - Compare high vs low performers across ALL dimensions
-           - Geographic clustering patterns (STATE_ABBR analysis)
-           - Product line specialization effects (PROD_LINE analysis)  
-           - Producer efficiency patterns (ACTIVE_PRODUCERS vs premiums)
-           - Temporal performance trends (year-over-year changes)
-           - Size vs efficiency analysis (small vs large agencies)
+        2. **KEY SUCCESS/FAILURE PATTERNS (Top 5 focus)**
+           - 3 main differences between top 5 vs bottom 5 performers  
+           - Geographic clustering patterns (STATE_ABBR analysis for top/bottom 5)
+           - Product line specialization effects (PROD_LINE analysis for top/bottom 5)
+           - Producer efficiency patterns (ACTIVE_PRODUCERS vs premiums for top/bottom 5)
+           - Agency size vs efficiency analysis (small vs large, top/bottom 5 only)
            
-        3. **PREDICTIVE PERFORMANCE INDICATORS**
-           - What early warning signs predict agency failure?
-           - Which metrics are most predictive of future success?
-           - Identify agencies currently at risk based on patterns
-           - Find agencies with hidden potential for growth
+        3. **QUICK INSIGHTS & RECOMMENDATIONS**
+           - 5 immediate red flags for agency risk
+           - 3 key success factors for new agencies
+           - Top 3 states for expansion opportunities
            
-        4. **MARKET DYNAMICS INVESTIGATION**
-           - Competitive positioning analysis by region
-           - Market share concentration effects
-           - Cross-selling effectiveness patterns
-           - New business vs renewal business analysis
-           - Premium pricing strategy effectiveness
-           
-        5. **DEEP STATISTICAL ANALYSIS**
-           - Correlation matrices between all performance metrics
-           - Regression analysis to identify key success drivers
-           - Outlier analysis - who breaks the normal patterns and why?
-           - Time series analysis of performance evolution
-           - Cohort analysis by agency age/entry year
-           
-        6. **ACTIONABLE BUSINESS INTELLIGENCE**
-           - Investment allocation recommendations (which agencies to invest in)
-           - Risk mitigation strategies (which agencies need intervention)
-           - Market expansion opportunities (underserved geographic areas)
-           - Best practice playbook from top performers
-           - Benchmarking standards for different agency types
-           
-        7. **SPECIFIC INVESTIGATIVE QUESTIONS TO ANSWER:**
-           - Why do some agencies maintain <50% loss ratios while others exceed 100%?
-           - What geographic factors correlate with agency success?
-           - How does producer count affect per-producer productivity?
-           - Which product lines generate the most profitable agencies?
-           - What retention patterns separate winners from losers?
-           - How do growth agencies differ from stable agencies?
-           
-        **EXECUTION REQUIREMENTS:**
-        - Use advanced pandas analysis, statistical modeling, machine learning if needed
-        - Create detailed visualizations showing performance patterns
-        - Generate specific agency lists (top 50 performers, bottom 50, at-risk agencies)
-        - Include statistical significance testing for all findings
-        - Calculate specific ROI and performance benchmarks
-        - Provide concrete numeric thresholds for performance categories
         
-        **DELIVERABLES:**
-        - Executive summary with 10 key investigative findings
-        - Detailed agency performance rankings with explanations
-        - Risk assessment matrix for all agencies
-        - Investment priority recommendations with expected returns
-        - Market opportunity map with specific targets
-        - Performance improvement playbook based on top performer analysis
+        **EXECUTION APPROACH:**
+        - Focus on pandas analysis for quick insights
+        - Simple statistical summaries, avoid complex modeling
+        - Prioritize actionable findings over comprehensive analysis
+        - Keep analysis under 10 minutes
+        
+        **QUICK DELIVERABLES:**
+        - 5-point executive summary
+        - Top 5 and Bottom 5 agency list with reasons
+        - 3 key geographic insights 
+        - 5 immediate action items
         
         Make this a true INVESTIGATIVE ANALYSIS that uncovers hidden patterns and provides specific, actionable intelligence for business decisions.
         '''
